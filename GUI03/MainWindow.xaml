@@ -12,13 +12,27 @@
             <ColumnDefinition Width="8*"></ColumnDefinition>
             <ColumnDefinition Width="11*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        
         <Border Grid.Column="0" Grid.RowSpan="4" BorderBrush="Gray" 
         BorderThickness="1,1,1,1" Background="{x:Null}" />
         <Border Grid.Column="2" Grid.RowSpan="4" BorderBrush="Gray" 
         BorderThickness="1,1,1,1" Background="{x:Null}" />
+        
         <Label Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Money: " FontSize="20"></Label>
+        
         <Button x:Name="btn_add" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="20" Margin="0,44,0,0" Padding="10" RenderTransformOrigin="0.505,0.931">Add To Army</Button>
         <Button x:Name="btn_remove" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="20" Margin="0,117,0,0" Padding="10" RenderTransformOrigin="0.51,-1.213">Remove From Army</Button>
         <Button x:Name="btn_edit" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" Padding="10">Edit Trooper</Button>
+
+        <ListBox Grid.Column="0" x:Name="lbox" HorizontalContentAlignment="Stretch">
+            <StackPanel>
+                <Label Content="Binding Name"></Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <ProgressBar Minimum="0" Maximum="100" Value="75" Height="10" Width="70px" Margin="10"></ProgressBar>
+                    <ProgressBar Minimum="0" Maximum="100" Value="75" Height="10" Width="70px" Margin="10"></ProgressBar>
+                    <ProgressBar Minimum="0" Maximum="100" Value="75" Height="10" Width="70px" Margin="10"></ProgressBar>
+                </StackPanel>
+            </StackPanel>
+        </ListBox>
     </Grid>
 </Window>
