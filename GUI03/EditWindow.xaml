@@ -1,0 +1,23 @@
+﻿<Window x:Class="GUI03.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI03"
+        mc:Ignorable="d"
+        Title="EditWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Grid.Column="0" DataContext="{Binding ElementName=lbox, Path=SelectedItem}">
+            <Label x:Name="lb_name"   Background="LightBlue" Padding="10" />
+            <Label x:Name="lb_strength" Content="Strength" Background="LightBlue" Padding="10" />
+            <TextBox x:Name="tb_strength" Text="{Binding Strength, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
+            <Label x:Name="lb_vitality" Content="Vitality" Background="LightBlue" Padding="10" />
+            <TextBox x:Name="tb_vitality" Text="{Binding Vitality, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
+            <Label x:Name="lb_value" Content="Value" Background="LightBlue" Padding="10" />
+            <TextBox x:Name="tb_value" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
+            
+            <Button Content="Save!" Padding="10" Click="Button_Click" />
+            
+        </StackPanel>
+    </Grid>
+</Window>
