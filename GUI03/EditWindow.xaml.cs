@@ -25,6 +25,17 @@ namespace GUI03
         {
             InitializeComponent();
             this.unit = unit;
+            lb_name.Content = unit.Name;
+            lb_strength.Content = unit.Strength;
+            lb_vitality.Content = unit.Vitality;
+            lb_value.Content = unit.Value;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            unit.Strength = int.Parse(tb_strength.ToString());
+            unit.Vitality = int.Parse(tb_vitality.ToString());
+            unit.Value = int.Parse(tb_value.ToString());
         }
     }
 }

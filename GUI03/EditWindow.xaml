@@ -8,12 +8,13 @@
         Title="EditWindow" Height="450" Width="800">
     <Grid>
         <StackPanel Grid.Column="0" DataContext="{Binding ElementName=lbox, Path=SelectedItem}">
-            <Label Content="Strength" Background="LightBlue" Padding="10" />
-            <TextBox Text="{Binding Strength, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
-            <Label Content="Vitality" Background="LightBlue" Padding="10" />
-            <TextBox Text="{Binding Vitality, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
-            <Label Content="Cost" Background="LightBlue" Padding="10" />
-            <TextBox Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
+            <Label x:Name="lb_name"   Background="LightBlue" Padding="10" />
+            <Label x:Name="lb_strength" Content="Strength" Background="LightBlue" Padding="10" />
+            <TextBox x:Name="tb_strength" Text="{Binding Strength, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
+            <Label x:Name="lb_vitality" Content="Vitality" Background="LightBlue" Padding="10" />
+            <TextBox x:Name="tb_vitality" Text="{Binding Vitality, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
+            <Label x:Name="lb_value" Content="Value" Background="LightBlue" Padding="10" />
+            <TextBox x:Name="tb_value" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
             
             <Button Content="Save!" Padding="10" Click="Button_Click" />
             

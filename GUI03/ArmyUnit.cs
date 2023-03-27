@@ -12,11 +12,13 @@ namespace GUI03
 {
     public class ArmyUnit : INotifyPropertyChanged
     {
-        public int strength { get; set; }
+        public string name;
 
-        public int vitality { get; set; }
+        public int strength;
 
-        public int value { get; set; }
+        public int vitality;
+
+        public int value;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -25,6 +27,16 @@ namespace GUI03
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value.ToString();
+                OnPropertyChanged();
+            }
         }
 
         public int Strength
