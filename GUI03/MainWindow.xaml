@@ -26,11 +26,11 @@
 
         <ListBox Grid.Column="0" x:Name="lbox" HorizontalContentAlignment="Stretch">
             <StackPanel>
-                <Label Content="Binding Name"></Label>
+                <Label Content="{Binding name}"></Label>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                    <ProgressBar Minimum="0" Maximum="100" Value="75" Height="10" Width="70px" Margin="10"></ProgressBar>
-                    <ProgressBar Minimum="0" Maximum="100" Value="75" Height="10" Width="70px" Margin="10"></ProgressBar>
-                    <ProgressBar Minimum="0" Maximum="100" Value="75" Height="10" Width="70px" Margin="10"></ProgressBar>
+                    <ProgressBar Minimum="0" Maximum="100" Value="{Binding strength}" Height="10" Width="70px" Margin="10"></ProgressBar>
+                    <ProgressBar Minimum="0" Maximum="100" Value="{Binding vitality}" Height="10" Width="70px" Margin="10"></ProgressBar>
+                    <ProgressBar Minimum="0" Maximum="100" Value="{Binding value}" Height="10" Width="70px" Margin="10"></ProgressBar>
                 </StackPanel>
             </StackPanel>
         </ListBox>
