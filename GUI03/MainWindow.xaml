@@ -25,14 +25,18 @@
         <Button x:Name="btn_edit" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="20" Padding="10">Edit Trooper</Button>
 
         <ListBox Grid.Column="0" x:Name="lbox" HorizontalContentAlignment="Stretch">
-            <StackPanel>
-                <Label Content="{Binding name}"></Label>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                    <ProgressBar Minimum="0" Maximum="100" Value="{Binding strength}" Height="10" Width="70px" Margin="10"></ProgressBar>
-                    <ProgressBar Minimum="0" Maximum="100" Value="{Binding vitality}" Height="10" Width="70px" Margin="10"></ProgressBar>
-                    <ProgressBar Minimum="0" Maximum="100" Value="{Binding value}" Height="10" Width="70px" Margin="10"></ProgressBar>
-                </StackPanel>
-            </StackPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding Name}"></Label>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                <ProgressBar Minimum="0" Maximum="10" Value="{Binding Strength}" Height="10" Width="70px" Margin="10" ></ProgressBar>
+                                <ProgressBar Minimum="0" Maximum="10" Value="{Binding Vitality}" Height="10" Width="70px" Margin="10"></ProgressBar>
+                                <ProgressBar Minimum="0" Maximum="10" Value="{Binding Value}" Height="10" Width="70px" Margin="10"></ProgressBar>
+                            </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
 
     </Grid>
