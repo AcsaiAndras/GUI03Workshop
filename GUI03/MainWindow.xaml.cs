@@ -29,10 +29,11 @@ namespace GUI03
             
             units = new ObservableCollection<ArmyUnit>()
             {
-                new ArmyUnit(){Name = "mariner",Strength=7,Vitality=7,Value=7 },
-                new ArmyUnit(){Name = "sniper",Strength=8,Vitality=5,Value=7  },
-                new ArmyUnit(){Name = "pilot",Strength=4,Vitality=3,Value=4  },
-                new ArmyUnit(){Name = "engineer",Strength=6,Vitality=5,Value=5  }
+                new ArmyUnit(){Name = "mariner", Strength=8, Vitality=7, Value=7 },
+                new ArmyUnit(){Name = "sniper", Strength=8, Vitality=5, Value=7  },
+                new ArmyUnit(){Name = "pilot", Strength=4, Vitality=3, Value=4  },
+                new ArmyUnit(){Name = "engineer", Strength=5, Vitality=6, Value=8  },
+                new ArmyUnit(){Name = "infantry", Strength=6, Vitality=8, Value=10  }
             };
 
             lbox.ItemsSource = units;
