@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:GUI03"
         mc:Ignorable="d"
         Title="EditWindow" Height="450" Width="800">
+    
     <Grid>
-        <StackPanel Grid.Column="0" DataContext="{Binding ElementName=lbox, Path=SelectedItem}">
-            <Label x:Name="lb_name"   Background="LightBlue" Padding="10" />
+        <StackPanel x:Name="stack" Grid.Column="0">
+            <Label x:Name="lb_name" Content="{Binding Name}"  Background="LightBlue" Padding="10" />
             <Label x:Name="lb_strength" Content="Strength" Background="LightBlue" Padding="10" />
             <TextBox x:Name="tb_strength" Text="{Binding Strength, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
             <Label x:Name="lb_vitality" Content="Vitality" Background="LightBlue" Padding="10" />

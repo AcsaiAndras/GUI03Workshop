@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,22 +21,44 @@ namespace GUI03
     public partial class EditWindow : Window
     {
         public ArmyUnit unit { get; set; }
+       
+         
 
-        public EditWindow(ArmyUnit unit)
+        public EditWindow(ArmyUnit faszom)
         {
             InitializeComponent();
-            this.unit = unit;
-            lb_name.Content = unit.Name;
-            lb_strength.Content = unit.Strength;
-            lb_vitality.Content = unit.Vitality;
-            lb_value.Content = unit.Value;
+
+            ;
+            this.DataContext = faszom;
+            
+            ;
+            //this.unit = unit;
+            //lb_name.Content = unit.Name;
+            //lb_strength.Content = unit.Strength;
+            //lb_value.Content = unit.Value;
+            //lb_vitality.Content = unit.Vitality;
+
+
         }
+
+        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            unit.Strength = int.Parse(tb_strength.ToString());
-            unit.Vitality = int.Parse(tb_vitality.ToString());
-            unit.Value = int.Parse(tb_value.ToString());
+            //unit.Strength = int.Parse(tb_strength.ToString());
+            //unit.Vitality = int.Parse(tb_vitality.ToString());
+            //unit.Value = int.Parse(tb_value.ToString());
+
+           
+
+            foreach (var item in stack.Children)
+            {
+                if (item is TextBox t)
+                {
+                    t.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+                }
+            }
+            this.DialogResult = true;
         }
     }
 }
