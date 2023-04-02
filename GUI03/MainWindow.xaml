@@ -21,8 +21,8 @@
         BorderThickness="1,1,1,1" Background="{x:Null}" />
         <Border Grid.Column="2" Grid.RowSpan="4" BorderBrush="Gray" 
         BorderThickness="1,1,1,1" Background="{x:Null}" />
-        
-        <Label Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Money:" FontSize="20"></Label>
+
+        <Label Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Content="{Binding Money}" ContentStringFormat="Money: {0}$" FontSize="20"></Label>
         
         <Button x:Name="btn_add" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="20" Margin="0,44,0,0" Padding="10" RenderTransformOrigin="0.505,0.931" Click="btn_add_Click">Add To Army</Button>
         <Button x:Name="btn_remove" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="20" Margin="0,117,0,0" Padding="10" RenderTransformOrigin="0.51,-1.213" Click="btn_remove_Click">Remove From Army</Button>
@@ -47,11 +47,11 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Label Content="{Binding Name}"></Label>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                            <ProgressBar Minimum="0" Maximum="10" Value="{Binding Strength}" Height="10" Width="70px" Margin="10" Foreground="{Binding Strength, Converter={StaticResource colorConverter}}"></ProgressBar>
-                            <ProgressBar Minimum="0" Maximum="10" Value="{Binding Vitality}" Height="10" Width="70px" Margin="10" Foreground="{Binding Vitality, Converter={StaticResource colorConverter}}"></ProgressBar>
-                            <ProgressBar Minimum="0" Maximum="10" Value="{Binding Value}" Height="10" Width="70px" Margin="10" Foreground="{Binding Value, Converter={StaticResource colorConverter}}"></ProgressBar>
+                            <Label Content="{Binding Name}"></Label>
+                            <Label Content="{Binding Strength}"></Label>
+                            <Label Content="{Binding Vitality}"></Label>
+                            <Label Content="{Binding Value}"></Label>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
