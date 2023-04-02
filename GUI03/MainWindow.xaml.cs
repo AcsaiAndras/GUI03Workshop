@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -42,10 +43,7 @@ namespace GUI03
 
 
         public ObservableCollection<ArmyUnit> Army { get => army; set => army = value; }
-        
-            
-            
-
+       
         private int money { get; set; }
 
 
@@ -54,11 +52,6 @@ namespace GUI03
             InitializeComponent();
 
             this.DataContext = this;
-
-
-
-
-
         }
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
@@ -74,7 +67,7 @@ namespace GUI03
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
         {
-            new EditWindow(SelectedUnitArmy).ShowDialog();
+            new EditWindow(SelectedUnitBarrack).ShowDialog();
         }
     }
 }
