@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,9 +45,8 @@ namespace GUI03
 
 
         public ObservableCollection<ArmyUnit> Army { get => army; set => army = value; }
-       
-        private int money { get; set; }
 
+        public int Money { get; set; }
 
         public MainWindow()
         {
@@ -57,12 +58,13 @@ namespace GUI03
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
             army.Add(SelectedUnitBarrack);
-            //money += SelectedUnitArmy.value;
+            Money += army.Sum(t => t.Value * t.Strength * t.Vitality);
         }
 
         private void btn_remove_Click(object sender, RoutedEventArgs e)
         {
             army.Remove(SelectedUnitArmy);
+            Money -= army.Sum(t => t.Value * t.Strength * t.Vitality);
         }
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
