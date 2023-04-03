@@ -22,35 +22,15 @@ namespace GUI03
     {
         public ArmyUnit unit { get; set; }
        
-         
-
-        public EditWindow(ArmyUnit faszom)
+        public EditWindow(ArmyUnit unit)
         {
             InitializeComponent();
 
-            ;
-            this.DataContext = faszom;
-            
-            ;
-            //this.unit = unit;
-            //lb_name.Content = unit.Name;
-            //lb_strength.Content = unit.Strength;
-            //lb_value.Content = unit.Value;
-            //lb_vitality.Content = unit.Vitality;
-
-
+            this.DataContext = unit;
         }
-
-        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //unit.Strength = int.Parse(tb_strength.ToString());
-            //unit.Vitality = int.Parse(tb_vitality.ToString());
-            //unit.Value = int.Parse(tb_value.ToString());
-
-           
-
             foreach (var item in stack.Children)
             {
                 if (item is TextBox t)

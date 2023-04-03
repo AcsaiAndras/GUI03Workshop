@@ -22,7 +22,7 @@
         <Border Grid.Column="2" Grid.RowSpan="4" BorderBrush="Gray" 
         BorderThickness="1,1,1,1" Background="{x:Null}" />
 
-        <Label Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Content="{Binding Money}" ContentStringFormat="Money: {0}$" FontSize="20"></Label>
+        <Label Grid.Column="1" x:Name="cash" VerticalAlignment="Top" HorizontalAlignment="Center" Content="{Binding Money}" ContentStringFormat="Money: {0}$" FontSize="20"></Label>
         
         <Button x:Name="btn_add" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="20" Margin="0,44,0,0" Padding="10" RenderTransformOrigin="0.505,0.931" Click="btn_add_Click">Add To Army</Button>
         <Button x:Name="btn_remove" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="20" Margin="0,117,0,0" Padding="10" RenderTransformOrigin="0.51,-1.213" Click="btn_remove_Click">Remove From Army</Button>

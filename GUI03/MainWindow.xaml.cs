@@ -32,7 +32,6 @@ namespace GUI03
                 new ArmyUnit() { Name = "pilot", Strength = 4, Vitality = 3, Value = 4  },
                 new ArmyUnit() { Name = "engineer", Strength = 5, Vitality = 6, Value = 8  },
                 new ArmyUnit() { Name = "infantry", Strength = 6, Vitality = 8, Value = 10  }
-
         };
 
         public ArmyUnit SelectedUnitBarrack { get; set; }
@@ -59,12 +58,14 @@ namespace GUI03
         {
             army.Add(SelectedUnitBarrack);
             Money += army.Sum(t => t.Value * t.Strength * t.Vitality);
+            cash.Content = Money;
         }
 
         private void btn_remove_Click(object sender, RoutedEventArgs e)
         {
             army.Remove(SelectedUnitArmy);
             Money -= army.Sum(t => t.Value * t.Strength * t.Vitality);
+            cash.Content = Money;
         }
 
         private void btn_edit_Click(object sender, RoutedEventArgs e)
