@@ -11,11 +11,11 @@
         <StackPanel x:Name="stack" Grid.Column="0">
             <Label x:Name="lb_name" Content="{Binding Name}"  Background="LightBlue" Padding="10" />
             <Label x:Name="lb_strength" Content="Strength" Background="LightBlue" Padding="10" />
-            <TextBox x:Name="tb_strength" Text="{Binding Strength, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
+            <TextBox x:Name="tb_strength" Text="{Binding Strength, UpdateSourceTrigger=Explicit}" Padding="10" />
             <Label x:Name="lb_vitality" Content="Vitality" Background="LightBlue" Padding="10" />
-            <TextBox x:Name="tb_vitality" Text="{Binding Vitality, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
+            <TextBox x:Name="tb_vitality" Text="{Binding Vitality, UpdateSourceTrigger=Explicit}" Padding="10" />
             <Label x:Name="lb_value" Content="Value" Background="LightBlue" Padding="10" />
-            <TextBox x:Name="tb_value" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" Padding="10" />
+            <TextBox x:Name="tb_value" Text="{Binding Value, UpdateSourceTrigger=Explicit}" Padding="10" />
             
             <Button Content="Save!" Padding="10" Click="Button_Click" />
             
