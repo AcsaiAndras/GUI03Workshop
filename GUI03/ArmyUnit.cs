@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,55 +11,58 @@ using System.Xml.Linq;
 
 namespace GUI03
 {
-    public class ArmyUnit : INotifyPropertyChanged
+    public class ArmyUnit : ObservableObject
     {
         public string name;
-
-        public int strength;
-
-        public int vitality;
-
-        public int value;
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         public string Name
         {
             get { return name; }
-            set
-            {
-                name = value.ToString();
-                OnPropertyChanged();
-            }
+            set { SetProperty(ref name, value); }
         }
+
+        public int strength;
 
         public int Strength
         {
             get { return strength; }
-            set
-            {
-                strength = value;
-                OnPropertyChanged();
-            }
+            set { SetProperty(ref strength, value); }
         }
+
+        public int vitality;
 
         public int Vitality
         {
             get { return vitality; }
-            set { vitality = value; OnPropertyChanged(); }
+            set { SetProperty(ref vitality, value); }
         }
+
+        public int value;
 
         public int Value
         {
             get { return value; }
-            set { this.value = value; OnPropertyChanged(); }
+            set { SetProperty(ref value, value); }
         }
+
+        public int Cost
+        {
+            get
+            {
+                return vitality * strength;
+            }
+        }
+
+        public ArmyUnit GetCopy()
+        {
+            return new ArmyUnit()
+            {
+                Name = this.Name,
+                Strength = this.Strength,
+                Vitality = this.Vitality
+            };
+        }
+
+
     }
 }

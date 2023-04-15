@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI03.Services;
+using GUI03.ViewModels;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,24 +22,33 @@ namespace GUI03
     /// </summary>
     public partial class EditWindow : Window
     {
-        public ArmyUnit unit { get; set; }
+       // public ArmyUnit unit { get; set; }
        
         public EditWindow(ArmyUnit unit)
         {
             InitializeComponent();
-
-            this.DataContext = unit;
+            //var vm = new ArmyUnitEditorWindowViewModel();
+            //vm.Setup(unit);
+            
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var item in stack.Children)
+            string asd = tb_name.Text;
+            ArmyUnit superHero;
+            superHero = new ArmyUnit
             {
-                if (item is TextBox t)
-                {
-                    t.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-                }
-            }
+                Name = tb_name.Text,
+                
+                Strength = int.Parse(tb_strength.Text),
+                Vitality = int.Parse(tb_vitality.Text)
+            };
+
+            MainWindowViewModel.Barrack.Add(superHero);
+
+            
+
             this.DialogResult = true;
         }
     }

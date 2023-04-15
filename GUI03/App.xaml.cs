@@ -1,4 +1,10 @@
-﻿using System;
+﻿using GUI03.Logic;
+using GUI03.Services;
+using GUI03.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Toolkit.Mvvm.DependencyInjection;
+using Microsoft.Toolkit.Mvvm.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +19,15 @@ namespace GUI03
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            Ioc.Default.ConfigureServices(
+                new ServiceCollection()
+                    .AddSingleton<IArmyLogic, ArmyLogic>()
+                    .AddSingleton<IArmyEditorViaWindow, ArmyEditorViaWindow>()
+                    .AddSingleton<IMessenger>(WeakReferenceMessenger.Default)
+                    .BuildServiceProvider()
+                );
+        }
     }
 }

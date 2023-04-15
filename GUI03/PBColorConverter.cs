@@ -9,16 +9,16 @@ using System.Windows.Media;
 
 namespace GUI03
 {
-    internal class PBColorConverter : IValueConverter
+    public class PBColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            int input = (int)value;
-            if (input < 4)
+            double number = double.Parse(value.ToString());
+            if (number < 4)
             {
                 return Brushes.Red;
             }
-            else if (input < 7)
+            else if (number < 7)
             {
                 return Brushes.Yellow;
             }
