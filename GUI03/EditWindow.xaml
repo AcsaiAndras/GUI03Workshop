@@ -6,20 +6,36 @@
         xmlns:local="clr-namespace:GUI03"
         xmlns:vms="clr-namespace:GUI03.ViewModels"
         mc:Ignorable="d"
-        Title="EditWindow" Height="450" Width="800">
-    
+        Title="EditWindow" Height="350" Width="600">
+
     <Grid>
-        <StackPanel x:Name="stack" Grid.Column="0">
+        <StackPanel x:Name="stack" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.054"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
             <Label x:Name="lb_name" Content="Name"  Background="LightBlue" Padding="10" />
             <TextBox x:Name="tb_name" Padding="10" />
             <Label x:Name="lb_strength" Content="Strength" Background="LightBlue" Padding="10" />
             <TextBox x:Name="tb_strength" Padding="10" />
             <Label x:Name="lb_vitality" Content="Vitality" Background="LightBlue" Padding="10" />
             <TextBox x:Name="tb_vitality" Padding="10" />
-            
-            
+            <Label x:Name="lb_type" Content="Type" Background="LightBlue" Padding="10" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                
+                <RadioButton Content="Good" x:Name="rb_good" Margin="10" IsChecked="True"></RadioButton>
+                <RadioButton Content="Bad" x:Name="rb_bad" Margin="10"></RadioButton>
+                <RadioButton Content="Neutral" x:Name="rb_netural" Margin="10"></RadioButton>
+         
+            </StackPanel>
+
             <Button Content="Save!" Padding="10" Click="Button_Click" />
-            
+
         </StackPanel>
     </Grid>
 </Window>

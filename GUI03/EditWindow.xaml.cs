@@ -37,13 +37,26 @@ namespace GUI03
         {
             string asd = tb_name.Text;
             ArmyUnit superHero;
+            
             superHero = new ArmyUnit
             {
                 Name = tb_name.Text,
-                
+
                 Strength = int.Parse(tb_strength.Text),
-                Vitality = int.Parse(tb_vitality.Text)
+                Vitality = int.Parse(tb_vitality.Text),
             };
+            if (rb_good.IsChecked == true)
+            {
+                superHero.Type = type.Good;
+            }
+            else if (rb_bad.IsChecked == true)
+            {
+                superHero.Type = type.Bad;
+            }
+            else
+            {
+               superHero.Type = type.Neutral;
+            }
 
             MainWindowViewModel.Barrack.Add(superHero);
 

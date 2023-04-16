@@ -11,8 +11,14 @@ using System.Xml.Linq;
 
 namespace GUI03
 {
+    public enum type
+    {
+        Good = 0, Bad = 1, Neutral = 2
+    }
     public class ArmyUnit : ObservableObject
     {
+        public type Type { get; set; }
+
         public string name;
 
         public string Name

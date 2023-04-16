@@ -13,7 +13,7 @@
     </Window.Resources>
 
     <Window.DataContext>
-        <vms:MainWindowViewModel />
+        <vms:MainWindowViewModel x:Name="vms"/>
     </Window.DataContext>
 
     <Grid>
