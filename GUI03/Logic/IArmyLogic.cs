@@ -8,9 +8,9 @@ namespace GUI03.Logic
         double AVGPower { get; }
         double AVGSpeed { get; }
 
-        void AddToArmy(ArmyUnit trooper);
-        void AddSuperHero(ArmyUnit trooper);
-        void RemoveFromArmy(ArmyUnit trooper);
-        void SetupCollections(IList<ArmyUnit> barracks, IList<ArmyUnit> army);
+        void AddToArmy(Superhero trooper);
+        void AddSuperHero(Superhero trooper);
+        void RemoveFromArmy(Superhero trooper);
+        void SetupCollections(IList<Superhero> barracks, IList<Superhero> army);
     }
 }

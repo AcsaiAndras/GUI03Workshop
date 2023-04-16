@@ -8,17 +8,15 @@ namespace GUI03.ViewModels
 {
     public class ArmyUnitEditorWindowViewModel
     {
-        public ArmyUnit Actual { get; set; }
+        public Superhero Actual { get; set; }
 
-        public void Setup(ArmyUnit armyunit)
+        public void Setup(Superhero armyunit)
         {
             this.Actual = armyunit;
         }
 
-
         public ArmyUnitEditorWindowViewModel()
         {
-
         }
     }
 }

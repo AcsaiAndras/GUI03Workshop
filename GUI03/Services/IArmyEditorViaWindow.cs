@@ -2,6 +2,6 @@
 {
     public interface IArmyEditorViaWindow
     {
-        void Edit(ArmyUnit armyunit);
+        void Edit(Superhero armyunit);
     }
 }

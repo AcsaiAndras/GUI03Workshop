@@ -10,8 +10,8 @@ namespace GUI03.Logic
 {
     public class ArmyLogic : IArmyLogic
     {
-        IList<ArmyUnit> barracks;
-        IList<ArmyUnit> army;
+        IList<Superhero> barracks;
+        IList<Superhero> army;
         IMessenger messenger;
         IArmyEditorViaWindow editorService;
 
@@ -45,30 +45,28 @@ namespace GUI03.Logic
             }
         }
 
-        public void SetupCollections(IList<ArmyUnit> barracks, IList<ArmyUnit> army)
+        public void SetupCollections(IList<Superhero> barracks, IList<Superhero> army)
         {
             this.barracks = barracks;
             this.army = army;
         }
 
-        public void AddToArmy(ArmyUnit trooper)
+        public void AddToArmy(Superhero trooper)
         {
             army.Add(trooper.GetCopy());
             messenger.Send("Trooper added", "TrooperInfo");
         }
 
-        public void RemoveFromArmy(ArmyUnit trooper)
+        public void RemoveFromArmy(Superhero trooper)
         {
             army.Remove(trooper);
             messenger.Send("Trooper removed", "TrooperInfo");
         }
 
-        public void AddSuperHero(ArmyUnit trooper)
+        public void AddSuperHero(Superhero trooper)
         {
             editorService.Edit(trooper);
         }
-
-
     }
 }
 

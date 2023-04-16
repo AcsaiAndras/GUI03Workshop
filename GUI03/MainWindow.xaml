@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:GUI03"
         xmlns:vms="clr-namespace:GUI03.ViewModels"
         mc:Ignorable="d"
-        Title="Army Editor" Height="450" Width="800" Closing="Window_Closing">
+        Title="Superhero Manager" Height="450" Width="800" Closing="Window_Closing">
     <Window.Resources>
-        <local:PBColorConverter x:Key="colorConverter">
-        </local:PBColorConverter>
+        <local:PBColorConverter x:Key="colorConverter"></local:PBColorConverter>
+        <local:BGColorConverter x:Key="BGColorConverter"></local:BGColorConverter>
     </Window.Resources>
 
     <Window.DataContext>
@@ -26,7 +26,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1">
-                        <Grid>
+                        <Grid Background="{Binding Type, Converter={StaticResource BGColorConverter}}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*" />
                                 <ColumnDefinition Width="1*" />
@@ -49,8 +49,8 @@
         <StackPanel Grid.Column="1">
             <Label HorizontalContentAlignment="Center" FontSize="14"
                 Content="{Binding AllCost}" ContentStringFormat="Cost: {0}$" />
-            <Button Content="Add To Army" Command="{Binding AddToArmyCommand}" Margin="10" Padding="10" />
-            <Button Content="Remove From Army" Command="{Binding RemoveFromArmyCommand}" Margin="10" Padding="10" />
+            <Button Content="Send To Battle" Command="{Binding AddToArmyCommand}" Margin="10" Padding="10" />
+            <Button Content="Recall From Battle" Command="{Binding RemoveFromArmyCommand}" Margin="10" Padding="10" />
             <Button Content="Add Super Hero" Command="{Binding AddSuperHeroCommand}" Margin="10" Padding="10" />
             <Label HorizontalContentAlignment="Center" FontSize="14"
                 Content="{Binding AVGPower}" ContentStringFormat="Power: {0}" />

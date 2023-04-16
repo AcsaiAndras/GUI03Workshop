@@ -15,7 +15,8 @@ namespace GUI03
     {
         Good = 0, Bad = 1, Neutral = 2
     }
-    public class ArmyUnit : ObservableObject
+
+    public class Superhero : ObservableObject
     {
         public type Type { get; set; }
 
@@ -59,16 +60,14 @@ namespace GUI03
             }
         }
 
-        public ArmyUnit GetCopy()
+        public Superhero GetCopy()
         {
-            return new ArmyUnit()
+            return new Superhero()
             {
                 Name = this.Name,
                 Strength = this.Strength,
                 Vitality = this.Vitality
             };
         }
-
-
     }
 }

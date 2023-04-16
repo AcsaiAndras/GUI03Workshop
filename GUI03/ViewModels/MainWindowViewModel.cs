@@ -19,18 +19,15 @@ namespace GUI03.ViewModels
     
     public class MainWindowViewModel : ObservableRecipient
     {
-        public static ObservableCollection<ArmyUnit> Barrack { get; set; }
-
+        public static ObservableCollection<Superhero> Barrack { get; set; }
 
         IArmyLogic logic;
 
-        //public ObservableCollection<ArmyUnit> Barrack { get; set; }
+        public ObservableCollection<Superhero> Army { get; set; }
 
-        public ObservableCollection<ArmyUnit> Army { get; set; }
+        public Superhero selectedFromBarracks;
 
-        public ArmyUnit selectedFromBarracks;
-
-        public ArmyUnit SelectedFromBarracks
+        public Superhero SelectedFromBarracks
         {
             get { return selectedFromBarracks; }
             set
@@ -41,48 +38,22 @@ namespace GUI03.ViewModels
             }
         }
 
+        public Superhero newArmyUnit;
 
-
-
-        /// <summary>
-        /// /////////////////////////////////////////////
-        /// </summary>
-
-
-        
-
-
-
-
-
-
-
-
-
-
-        ////////////////////////////////////////////////
-
-
-
-        public ArmyUnit newArmyUnit;
-
-        public ArmyUnit NewArmyUnit
+        public Superhero NewArmyUnit
         {
             get { return newArmyUnit; }
             set
             {
-                //newArmyUnit = new ArmyUnit();
                 SetProperty(ref newArmyUnit, value);
-                //Barrack.Add(newArmyUnit);
                 (AddToArmyCommand as RelayCommand).NotifyCanExecuteChanged();
                 (AddSuperHeroCommand as RelayCommand).NotifyCanExecuteChanged();
             }
-
         }
 
-        private ArmyUnit selectedFromArmy;
+        private Superhero selectedFromArmy;
 
-        public ArmyUnit SelectedFromArmy
+        public Superhero SelectedFromArmy
         {
             get { return selectedFromArmy; }
             set
@@ -95,7 +66,6 @@ namespace GUI03.ViewModels
         public ICommand AddToArmyCommand { get; set; }
         public ICommand RemoveFromArmyCommand { get; set; }
         public ICommand AddSuperHeroCommand { get; set; }
-
 
         public int AllCost
         {
@@ -133,55 +103,19 @@ namespace GUI03.ViewModels
         public MainWindowViewModel()
             : this(IsInDesignMode ? null : Ioc.Default.GetService<IArmyLogic>())
         {
-
         }
 
         public MainWindowViewModel(IArmyLogic logic)
         {
             this.logic = logic;
-            Barrack = new ObservableCollection<ArmyUnit>();
-            Army = new ObservableCollection<ArmyUnit>();
+            Barrack = new ObservableCollection<Superhero>();
+            Army = new ObservableCollection<Superhero>();
 
             if (File.Exists("superheros.json"))
             {
-                var pizzas = JsonConvert.DeserializeObject<ArmyUnit[]>(File.ReadAllText("superheros.json"));
-                pizzas.ToList().ForEach(x => Barrack.Add(x));
+                var superheros = JsonConvert.DeserializeObject<Superhero[]>(File.ReadAllText("superheros.json"));
+                superheros.ToList().ForEach(x => Barrack.Add(x));
             }
-
-            //Barrack.Add(new ArmyUnit()
-            //{
-            //    Name = "marine",
-            //    Strength = 8,
-            //    Vitality = 6
-            //});
-            //Barrack.Add(new ArmyUnit()
-            //{
-            //    Name = "pilot",
-            //    Strength = 7,
-            //    Vitality = 3
-            //});
-            //Barrack.Add(new ArmyUnit()
-            //{
-            //    Name = "infantry",
-            //    Strength = 6,
-            //    Vitality = 8
-            //});
-            //Barrack.Add(new ArmyUnit()
-            //{
-            //    Name = "sniper",
-            //    Strength = 3,
-            //    Vitality = 3
-            //});
-            //Barrack.Add(new ArmyUnit()
-            //{
-            //    Name = "engineer",
-            //    Strength = 5,
-            //    Vitality = 6
-            //});
-
-            //Army.Add(Barrack[2].GetCopy());
-            //Army.Add(Barrack[4].GetCopy());
-
             logic.SetupCollections(Barrack, Army);
 
             AddToArmyCommand = new RelayCommand(

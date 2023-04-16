@@ -27,34 +27,9 @@ namespace GUI03
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        //ObservableCollection<ArmyUnit> barrack = new ObservableCollection<ArmyUnit>()
-        //{
-        //        new ArmyUnit() { Name = "mariner", Strength = 8, Vitality = 7, Value = 7 },
-        //        new ArmyUnit() { Name = "sniper", Strength = 8, Vitality = 5, Value = 7  },
-        //        new ArmyUnit() { Name = "pilot", Strength = 4, Vitality = 3, Value = 4  },
-        //        new ArmyUnit() { Name = "engineer", Strength = 5, Vitality = 6, Value = 8  },
-        //        new ArmyUnit() { Name = "infantry", Strength = 6, Vitality = 8, Value = 10  }
-        //};
-
-        //public ArmyUnit SelectedUnitBarrack { get; set; }
-
-        //public ArmyUnit SelectedUnitArmy { get; set; }
-
-        //public ObservableCollection<ArmyUnit> Barracks { get => barrack; set => barrack = value; }
-
-        //public ObservableCollection<ArmyUnit> army = new ObservableCollection<ArmyUnit>();
-
-
-        //public ObservableCollection<ArmyUnit> Army { get => army; set => army = value; }
-
-        //public int Money { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
-
-            //this.DataContext = this;
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)
@@ -62,28 +37,5 @@ namespace GUI03
             string jsonData = JsonConvert.SerializeObject(MainWindowViewModel.Barrack);
             File.WriteAllText("superheros.json", jsonData);
         }
-
-
-
-
-
-        //private void btn_add_Click(object sender, RoutedEventArgs e)
-        //{
-        //    army.Add(SelectedUnitBarrack);
-        //    Money += army.Sum(t => t.Value * t.Strength * t.Vitality);
-        //    cash.Content = Money;
-        //}
-
-        //private void btn_remove_Click(object sender, RoutedEventArgs e)
-        //{
-        //    army.Remove(SelectedUnitArmy);
-        //    Money -= army.Sum(t => t.Value * t.Strength * t.Vitality);
-        //    cash.Content = Money;
-        //}
-
-        //private void btn_edit_Click(object sender, RoutedEventArgs e)
-        //{
-        //    new EditWindow(SelectedUnitBarrack).ShowDialog();
-        //}
     }
 }

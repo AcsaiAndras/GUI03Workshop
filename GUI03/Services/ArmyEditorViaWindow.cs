@@ -8,7 +8,7 @@ namespace GUI03.Services
 {
     public class ArmyEditorViaWindow : IArmyEditorViaWindow
     {
-        public void Edit(ArmyUnit armyunit)
+        public void Edit(Superhero armyunit)
         {
             new EditWindow(armyunit).ShowDialog();
         }

@@ -22,23 +22,17 @@ namespace GUI03
     /// </summary>
     public partial class EditWindow : Window
     {
-       // public ArmyUnit unit { get; set; }
-       
-        public EditWindow(ArmyUnit unit)
+        public EditWindow(Superhero unit)
         {
             InitializeComponent();
-            //var vm = new ArmyUnitEditorWindowViewModel();
-            //vm.Setup(unit);
-            
-            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string asd = tb_name.Text;
-            ArmyUnit superHero;
+            Superhero superHero;
             
-            superHero = new ArmyUnit
+            superHero = new Superhero
             {
                 Name = tb_name.Text,
 
@@ -59,8 +53,6 @@ namespace GUI03
             }
 
             MainWindowViewModel.Barrack.Add(superHero);
-
-            
 
             this.DialogResult = true;
         }
