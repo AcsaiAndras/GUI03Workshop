@@ -67,14 +67,6 @@ namespace GUI03.ViewModels
         public ICommand RemoveFromArmyCommand { get; set; }
         public ICommand AddSuperHeroCommand { get; set; }
 
-        public int AllCost
-        {
-            get
-            {
-                return logic.AllCost;
-            }
-        }
-
         public double AVGPower
         {
             get

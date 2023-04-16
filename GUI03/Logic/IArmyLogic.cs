@@ -4,7 +4,6 @@ namespace GUI03.Logic
 {
     public interface IArmyLogic
     {
-        int AllCost { get; }
         double AVGPower { get; }
         double AVGSpeed { get; }
 

@@ -20,15 +20,7 @@ namespace GUI03.Logic
             this.messenger = messenger;
             this.editorService = editorService;
         }
-
-        public int AllCost
-        {
-            get
-            {
-                return army.Count == 0 ? 0 : army.Sum(t => t.Value);
-            }
-        }
-
+        
         public double AVGPower
         {
             get

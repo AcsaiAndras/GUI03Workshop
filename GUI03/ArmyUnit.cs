@@ -52,14 +52,6 @@ namespace GUI03
             set { SetProperty(ref value, value); }
         }
 
-        public int Cost
-        {
-            get
-            {
-                return vitality * strength;
-            }
-        }
-
         public Superhero GetCopy()
         {
             return new Superhero()

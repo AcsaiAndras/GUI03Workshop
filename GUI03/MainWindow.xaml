@@ -47,18 +47,16 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Grid.Column="1">
-            <Label HorizontalContentAlignment="Center" FontSize="14"
-                Content="{Binding AllCost}" ContentStringFormat="Cost: {0}$" />
             <Button Content="Send To Battle" Command="{Binding AddToArmyCommand}" Margin="10" Padding="10" />
             <Button Content="Recall From Battle" Command="{Binding RemoveFromArmyCommand}" Margin="10" Padding="10" />
-            <Button Content="Add Super Hero" Command="{Binding AddSuperHeroCommand}" Margin="10" Padding="10" />
+            <Button Content="Add Superhero" Command="{Binding AddSuperHeroCommand}" Margin="10" Padding="10" />
             <Label HorizontalContentAlignment="Center" FontSize="14"
-                Content="{Binding AVGPower}" ContentStringFormat="Power: {0}" />
+                Content="{Binding AVGPower}" ContentStringFormat="Avg. Power: {0}" />
             <ProgressBar Height="20" Maximum="10" 
                          Value="{Binding AVGPower, Mode=OneWay}" Margin="10"
                          Foreground="{Binding AVGPower, Mode=OneWay, Converter={StaticResource colorConverter}}"/>
             <Label HorizontalContentAlignment="Center" FontSize="14"
-                Content="{Binding AVGSpeed}" ContentStringFormat="Speed: {0}" />
+                Content="{Binding AVGSpeed}" ContentStringFormat="Avg. Speed: {0}" />
             <ProgressBar Height="20" Maximum="10" 
                          Value="{Binding AVGSpeed, Mode=OneWay}" Margin="10"
                          Foreground="{Binding AVGSpeed, Mode=OneWay, Converter={StaticResource colorConverter}}"/>
